@@ -244,7 +244,7 @@ Feel free to fork and improve this project!
 
 # 🙌 Author
 
-**Anup**
+**Anup Kumar Singh**
 
 ---
 
