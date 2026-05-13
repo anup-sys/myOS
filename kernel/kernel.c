@@ -1,27 +1,38 @@
+#include "screen.h"
+
 void kernel_main() {
-    char *video_memory = (char*) 0xb8000;
 
-    video_memory[0] = 'H';
-    video_memory[1] = 0x07;
+    /* Clear screen */
 
-    video_memory[2] = 'e';
-    video_memory[3] = 0x07;
+    clear_screen();
 
-    video_memory[4] = 'l';
-    video_memory[5] = 0x07;
+    /* Set text color */
 
-    video_memory[6] = 'l';
-    video_memory[7] = 0x07;
+    set_color(COLOR_LIGHT_GREEN,
+              COLOR_BLACK);
 
-    video_memory[8] = 'o';
-    video_memory[9] = 0x07;
+    /* Print welcome message */
 
-    video_memory[10] = ' ';
-    video_memory[11] = 0x07;
+    print("Welcome to MyOS!\n");
 
-    video_memory[12] = 'O';
-    video_memory[13] = 0x07;
+    /* Change color */
 
-    video_memory[14] = 'S';
-    video_memory[15] = 0x07;
+    set_color(COLOR_WHITE,
+              COLOR_BLACK);
+
+    print("Kernel Loaded Successfully\n");
+
+    print("Phase 3: Screen Driver Active\n");
+
+    print("--------------------------------\n");
+
+    print("Features Enabled:\n");
+
+    print("[+] VGA Text Output\n");
+    print("[+] Cursor Control\n");
+    print("[+] Screen Clearing\n");
+    print("[+] Color Support\n");
+    print("[+] Scrolling Support\n");
+
+    print("\nSystem Ready...\n");
 }

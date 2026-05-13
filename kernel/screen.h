@@ -3,14 +3,13 @@
 
 #include <stdint.h>
 
+/* VGA TEXT MODE SETTINGS */
 
 #define VGA_WIDTH  80
 #define VGA_HEIGHT 25
-
 #define VGA_MEMORY 0xB8000
 
-
-
+/* VGA COLORS */
 
 enum vga_color {
     COLOR_BLACK = 0,
@@ -31,18 +30,13 @@ enum vga_color {
     COLOR_WHITE,
 };
 
-
+/* SCREEN FUNCTIONS */
 
 void clear_screen();
-
 void print_char(char c);
-
-
 void print(const char* str);
-
 void new_line();
-
-
-void set_color(uint8_t foreground, uint8_t background);
+void set_color(uint8_t foreground,
+               uint8_t background);
 
 #endif
